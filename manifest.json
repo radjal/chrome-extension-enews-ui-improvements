@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Paste and Submit Tool",
+  "version": "1.0",
+  "description": "Injects a button to paste clipboard content and submit the form.",
+  "permissions": ["clipboardRead"],
+  "content_scripts": [
+    {
+      "matches": ["https://eu.nissan.biz/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
