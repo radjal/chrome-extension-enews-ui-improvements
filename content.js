@@ -40,8 +40,11 @@
 
             const form = input.closest('form');
             if (form) {
+              sendForm();
+              /*
               const submitBtn = form.querySelector('input[type="submit"], button[type="submit"]');
               submitBtn ? submitBtn.click() : form.submit();
+              */
             }
           } catch (err) {
             console.error('Clipboard access denied:', err);
@@ -52,6 +55,11 @@
       }
     });
   }
+
+function sendForm() {
+  document.querySelector('#_ctl0_ContentPlaceHolder_Main_btnVin').dispatchEvent(new Event('click', { bubbles: true }))
+}  ;
+
 
   const initialize = () => {
     injectButtons();
