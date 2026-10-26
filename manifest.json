@@ -1,12 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "eNews Paste and Submit Tool",
-  "version": "1.10",
+  "name": "eNews UI improvements",
+  "version": "1.12",
   "description": "Adds a paste & submit button next to lookup fields.",  "permissions": ["clipboardRead"],
   "content_scripts": [
-    {
-      "matches": ["https://eu.nissan.biz/*"],
-      "js": ["content.js"]
+    { 
+      "matches": ["https://eu.nissan.biz/secureredirect/enews/nissanows/homepage.aspx"],
+      "js": ["content.js"],
+      // Enable in iframes
+      "all_frames": true,
+      // Optional: helps if the iframe is 'about:blank' but inside the domain
+      "match_about_blank": true
     }
   ]
 }
