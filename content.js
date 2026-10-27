@@ -1,13 +1,10 @@
 (function() {
   // Check if the script is running inside an iframe
-  /*if (window.self === window.top) {
+  if (window.self === window.top) {
     console.log('top level window');
     return; // Exit if it's the main top-level document
-  }
-    */
-
-  console.log('Not a top level window');
-
+  } 
+  
   const targetIds = [
     'Txt_VIn',
     'Txt_Reg',
@@ -56,16 +53,15 @@
     });
   }
 
-function sendForm() {
-  document.querySelector('#_ctl0_ContentPlaceHolder_Main_btnVin').dispatchEvent(new Event('click', { bubbles: true }))
-}  ;
-
+  function sendForm() {
+    document.querySelector('#_ctl0_ContentPlaceHolder_Main_btnVin').dispatchEvent(new Event('click', { bubbles: true }))
+  }
 
   const initialize = () => {
     injectButtons();
     const observer = new MutationObserver(injectButtons);
     observer.observe(document.body, { childList: true, subtree: true });
-  };
+  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initialize);
