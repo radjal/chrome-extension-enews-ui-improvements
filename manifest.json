@@ -1,15 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "eNews UI improvements",
-  "version": "1.14",
-  "description": "Adds a paste & submit button next to lookup fields.",  "permissions": ["clipboardRead"],
+  "name": "Salesforce UI improvements",
+  "version": "1.17",
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://*.lightning.force.com/"],
   "content_scripts": [
-    { 
-      "matches": ["https://eu.nissan.biz/secureredirect/enews/nissanows/homepage.aspx"],
+    {
+      "matches": ["https://*.lightning.force.com/*"],
       "js": ["content.js"],
-      "css": ["styles.css"],
-      "all_frames": true,  // Enable extension in iframes
-      "match_about_blank": true // Optional: helps if the iframe is 'about:blank' but inside the domain
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "kb.html",
+        "templates.html"
+      ],
+      "matches": ["https://*.lightning.force.com/*"]
     }
   ]
 }
