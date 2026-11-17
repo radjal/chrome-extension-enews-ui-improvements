@@ -1,8 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Salesforce UI improvements",
-  "version": "1.17",
-  "permissions": ["activeTab"],
+  "version": "1.18",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite" 
+  ],
   "host_permissions": ["https://*.lightning.force.com/"],
   "content_scripts": [
     {
@@ -15,7 +18,9 @@
     {
       "resources": [
         "kb.html",
-        "templates.html"
+        "kb.js",
+        "templates.html",
+        "templates.js"
       ],
       "matches": ["https://*.lightning.force.com/*"]
     }

@@ -53,6 +53,7 @@ function openFileModal(fileName, title) {
     // 4. iframe to load the content
     const iframe = document.createElement('iframe');
     iframe.src = chrome.runtime.getURL(fileName);
+    iframe.allow = "clipboard-write";
     Object.assign(iframe.style, { flex: '1', border: 'none', width: '100%' });
 
     // Assemble components
